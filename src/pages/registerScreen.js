@@ -52,8 +52,8 @@ const RegisterScreen = ({history, match}) => {
 
   return (
     <div>
-        <div class="bg-white py-3">
-            <div class="container">
+        <div className="bg-white py-3">
+            <div className="container">
                 <h4 style={{color: '#1c6bb0'}}>Register New Account</h4>
                 {error && <Message color='primary'>{error}</Message>}
                 {loading && <Loader />}

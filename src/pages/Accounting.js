@@ -7,29 +7,29 @@ function Accounting() {
         <>
             <AdBanner />
             <div className="container">
-                <div class="mt-3">
-                    <div class="d-flex align-items-center float-end">
-                        <button type="button" class="btn btn-primary me-2">Add Patient</button>
-                        <button class="btn btn-primary me-2">Request Update</button>
-                        <button class="btn btn-primary me-2">Attorney Contact</button>
-                        <button class="btn btn-primary me-2">Add Law Office</button>
+                <div className="mt-3">
+                    <div className="d-flex align-items-center float-end">
+                        <button type="button" className="btn btn-primary me-2">Add Patient</button>
+                        <button className="btn btn-primary me-2">Request Update</button>
+                        <button className="btn btn-primary me-2">Attorney Contact</button>
+                        <button className="btn btn-primary me-2">Add Law Office</button>
                     </div>
                     <h4>Screen by Attorney Name:</h4>
                     <br />
                     <form method="POST" action="/case_management/">
                         <input type="hidden" name="csrfmiddlewaretoken" value="0bkBhTdlO12te4uiVQgzG8hzzDVzF3Y4jHgct9ZM2yHfgK23g2UKhyBLZlaWSY33" />
-                        <div class="mb-3 row gx-2">
-                            <div class="col-sm-6 offset-sm-6">
-                                <div class="d-flex gap-2 w-100">
-                                    <div class="flex-fill">
-                                        <input type="text" placeholder="Search Patients" class="form-control me-2" name="search_clients" id="search_clients" autocomplete="off" />
+                        <div className="mb-3 row gx-2">
+                            <div className="col-sm-6 offset-sm-6">
+                                <div className="d-flex gap-2 w-100">
+                                    <div className="flex-fill">
+                                        <input type="text" placeholder="Search Patients" className="form-control me-2" name="search_clients" id="search_clients" autocomplete="off" />
                                     </div>
-                                    <div class="flex-fill">
-                                        <input type="text" placeholder="Search Attorneys by Office Name" class="form-control me-2" name="search" id="search_attorneys" autocomplete="off" />
+                                    <div className="flex-fill">
+                                        <input type="text" placeholder="Search Attorneys by Office Name" className="form-control me-2" name="search" id="search_attorneys" autocomplete="off" />
                                     </div>
                                     <div>
-                                        <button type="button" id="btnsearch" class="btn btn-primary" style={{ background: "#1C6FB2" }}>
-                                            <i class="fas fa-search"></i>
+                                        <button type="button" id="btnsearch" className="btn btn-primary" style={{ background: "#1C6FB2" }}>
+                                            <i className="fas fa-search"></i>
                                         </button>
                                     </div>
                                     <input type="text" hidden value="True" name="value" />
@@ -39,48 +39,48 @@ function Accounting() {
                             </div>
                         </div>
                     </form>
-                    <div class="row">
-                        <div class="col-lg-2 col-md-4 col-xs-4 filter-container">
-                            <a href="#" data-id="" class="filter-item-all">All Patients</a>
+                    <div className="row pt-5">
+                        <div className="col-lg-2 col-md-4 col-xs-4 filter-container">
+                            <Link to="#" data-id="" className="filter-item-all" style={{ textDecoration: "none" }}>All Patients</Link>
 
-                            <div class="mb-3">
-                                <label class="me-2">
-                                    <input name="open_close" value="Open" type="checkbox" class="me-1" onchange="filterTFCaseStatusRefresh(event)" checked />Open
+                            <div className="mb-3 pt-4">
+                                <label className="me-2">
+                                    <input name="open_close" value="Open" type="checkbox" className="me-1" checked />Open
                                 </label>
                                 <label>
-                                    <input name="open_close" value="Close" type="checkbox" class="me-1" onchange="filterTFCaseStatusRefresh(event)" checked />Closed
+                                    <input name="open_close" value="Close" type="checkbox" className="me-1" checked />Closed
                                 </label>
                             </div>
 
-                            <button class="btn btn-primary m-1 filter-item w-100">New Lead</button>
+                            <button className="btn btn-primary m-1 filter-item w-100" style={{ textAlign: "left" }}>New Lead</button>
 
-                            <button class="btn btn-primary m-1 filter-item w-100">Treating</button>
+                            <button className="btn btn-primary m-1 filter-item w-100" style={{ textAlign: "left" }}>Treating</button>
 
-                            <button class="btn btn-primary m-1 filter-item w-100">Treatment Done</button>
+                            <button className="btn btn-primary m-1 filter-item w-100" style={{ textAlign: "left" }}>Treatment Done</button>
 
-                            <button class="btn btn-primary m-1 filter-item w-100">Settlement</button>
+                            <button className="btn btn-primary m-1 filter-item w-100" style={{ textAlign: "left" }}>Settlement</button>
 
                         </div>
-                        <div class="col-lg-10 col-md-8 col-xs-8">
-                            <table class="table table-striped table-hover table-borderless table-th-norm" style={{ justifyContent: "center" }} id="table-data">
+                        <div className="col-lg-10 col-md-8 col-xs-8">
+                            <table className="table table-striped table-hover table-borderless table-th-norm" style={{ justifyContent: "center" }} id="table-data">
                                 <thead>
-                                    <tr class="text-secondary">
-                                        <th></th>
-                                        <th></th>
-                                        <th>Patient</th>
-                                        <th>Original</th>
-                                        <th>Payments</th>
-                                        <th>Reductions</th>
-                                        <th>Lien</th>
-                                        <th>Total</th>
-                                        <th>Check #</th>
-                                        <th>Received</th>
+                                    <tr className="text-secondary">
+                                        <td></td>
+                                        <td></td>
+                                        <td>Patient</td>
+                                        <td>Original</td>
+                                        <td>Payments</td>
+                                        <td>Reductions</td>
+                                        <td>Lien</td>
+                                        <td>Total</td>
+                                        <td>Check #</td>
+                                        <td>Received</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr style={{ cursor: "pointer" }}>
                                         <th>1</th>
-                                        <td className='text-center' style={{ background: "red", borderRadius: "10px", display:"block" }}><b style={{ textAlign: "center", borderRadius: "10px", color: "white" }}>C</b></td>
+                                        <td><span className='text-center' style={{ background: "red", borderRadius: "5px", display: "block", color: "white" }}><b className='p-xl-0 p-1'>C</b></span></td>
                                         <td>Mosh, Josh</td>
                                         <td>$1,500.00</td>
                                         <td>$250.00</td>
@@ -92,7 +92,7 @@ function Accounting() {
                                     </tr>
                                     <tr style={{ cursor: "pointer" }}>
                                         <th>2</th>
-                                        <td className='text-center' style={{ background: "blue", borderRadius: "10px", display:"block" }}><b style={{ textAlign: "center", borderRadius: "10px", color: "white" }}>M</b></td>
+                                        <td><span className='text-center' style={{ background: "blue", borderRadius: "5px", display: "block", color: "white" }}><b className='p-xl-0 p-1'>M</b></span></td>
                                         <td>Mosh, Josh</td>
                                         <td>$0.00</td>
                                         <td>$0.00</td>
