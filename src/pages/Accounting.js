@@ -132,6 +132,14 @@ function Accounting() {
   };
 
   const gettingAllPatients = async (e) => {
+    setLeadButtonColor("white")
+    setLeadButtonBg("#0B5ED7")
+    setTreatingButtonColor("white")
+    setTreatingButtonBg("#0B5ED7")
+    setSettlementButtonColor("white")
+    setSettlementButtonBg("#0B5ED7")
+    setTreatingDoneButtonColor("white")
+    setTreatingDoneButtonBg("#0B5ED7")
     await AutoCompleteService.listPatientsManagement({
       client_id: "",
       attorney_id: "",
