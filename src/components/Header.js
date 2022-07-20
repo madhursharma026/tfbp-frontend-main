@@ -32,25 +32,25 @@ const Header = () => {
     }
 
     return (
-        <header class="pb-0 pt-1 bg-white">
-            <div class="container">
+        <header className="pb-0 pt-1 bg-white">
+            <div className="container">
                 {error && <Message color="primary">{error}</Message>}
                 {loading && <Loader />}
-                <div class="text-md-end">
+                <div className="text-md-end">
                     {!userInfo && (
                         <>
-                            <form onSubmit={submitHandler} method="POST" class="d-inline-flex flex-wrap">
-                                <input class="form-control form-control-sm me-3" style={{width: '180px'}} type="text" value={username} onChange={(e) => setUsername(e.target.value)} name="username" placeholder="Username" aria-label="default input example" />
-                                <input class="form-control form-control-sm me-3" style={{width: '180px'}} type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" name="password1" aria-label="default input example" />
-                                <button class="btn btn-sm btn-primary me-2" type="submit"><i class="fas fa-lock"></i></button>
+                            <form onSubmit={submitHandler} method="POST" className="d-inline-flex flex-wrap">
+                                <input className="form-control form-control-sm me-3" style={{width: '180px'}} type="text" value={username} onChange={(e) => setUsername(e.target.value)} name="username" placeholder="Username" aria-label="default input example" />
+                                <input className="form-control form-control-sm me-3" style={{width: '180px'}} type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password" name="password1" aria-label="default input example" />
+                                <button className="btn btn-sm btn-primary me-2" type="submit"><i className="fas fa-lock"></i></button>
                             </form>
-                            <a href="{% url 'reset_password' %}" class="topIcons me-2 text-decoration-none">Forgot Login Info?</a>
+                            <a href="{% url 'reset_password' %}" className="topIcons me-2 text-decoration-none">Forgot Login Info?</a>
                             
-                            <Link to="/createAccount" class="topIcons text-decoration-none" >Create Account</Link>
+                            <Link to="/createAccount" className="topIcons text-decoration-none" >Create Account</Link>
                         </>
                     )}
                     {userInfo && (
-                        <div class="top-nav-sm d-flex flex-wrap justify-content-md-end" style={{paddingTop: '3px', paddingBottom: '4px'}}>
+                        <div className="top-nav-sm d-flex flex-wrap justify-content-md-end" style={{paddingTop: '3px', paddingBottom: '4px'}}>
                         
                         {(userInfo.account_type === 'Provider' || userInfo.account_type == 'ProviderStaff') && (
                             <>
@@ -63,7 +63,7 @@ const Header = () => {
                                 
                                 <Link className='header-nav-items' to='/profile/'  >Account</Link>
                                 <Link className='header-nav-items' to='/'  >Case Management</Link>
-                                <Link className='header-nav-items' to='/'  >TFTodo</Link>
+                                <Link className='header-nav-items' to='/'  >To-Do</Link>
                                 <Link className='header-nav-items' to='/'  >Request Update</Link>
                                 <Link className='header-nav-items' to='/accounting/'  >Accounting</Link>
                                 <Link className='header-nav-items' to='/'  >Reports</Link>
@@ -111,27 +111,27 @@ const Header = () => {
                     
                 </div>
             </div>
-            <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-            <Link class="navbar-brand" to="/">
+            <div className="container">
+            <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
+            <Link className="navbar-brand" to="/#">
                 <img src={Logo} style={{width: '200px'}} alt="" />
             </Link>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item navItems me-2">
-                        <Link to="/" class="nav-link active" aria-current="page">Home</Link>
+            <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul className="navbar-nav">
+                    <li className="nav-item navItems me-2">
+                        <Link to="/" className="nav-link active" aria-current="page">Home</Link>
                     </li>
-                    <li class="nav-item navItems me-2">
-                        <Link to="/aboutus" class="nav-link">About Us</Link>
+                    <li className="nav-item navItems me-2">
+                        <Link to="/aboutus" className="nav-link">About Us</Link>
                     </li>
-                    <li class="nav-item navItems me-2">
-                        <Link to="/attorneyInfo" class="nav-link">Attorney Information</Link>
+                    <li className="nav-item navItems me-2">
+                        <Link to="/attorneyInfo" className="nav-link">Attorney Information</Link>
                     </li>
-                    <li class="nav-item navItems me-2">
-                        <Link to="/medicalProviders" class="nav-link">Medical Providers-List Your Office For Free!</Link>
+                    <li className="nav-item navItems me-2">
+                        <Link to="/medicalProviders" className="nav-link">Medical Providers-List Your Office For Free!</Link>
                     </li>
                 </ul>
             </div>
